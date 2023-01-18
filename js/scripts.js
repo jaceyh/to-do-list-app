@@ -1,18 +1,38 @@
 function newItem(){
 
+    //add new item to list
     let li = $('<li></li>');
-    $('body').append(li);
-    
     let inputValue = $('#input').val();
-    $('body').append(inputValue);
-  
-    let text = $('<text></text>');
-    $('body').append(text);
-  
+    li.append(inputValue);
+
     if (inputValue === '') {
-      alert("You must write something!");
+      alert('You must write something!');
     } else {
       let list = $('#list');
       list.append(li);
     }
+
+    //add strikethrough
+    function crossOut() {
+        li.toggleClass("strike");
+    }
+
+    li.on('dblclick', function crossOut() {
+            li.toggleClass("strike");
+    });
+
+    //adding delete button
+    let deleteButton = $('<deleteButton></deleteButton>');
+    deleteButton.append(document.createTextNode('X'));
+    li.append(deleteButton);
+
+    function deleteListItem() {
+    li.addClass("delete");
+    }
+
+    deleteButton.on("click", deleteListItem);
+
+    //allow reordering/sorting
+    $('#list').sortable();
+
 }
