@@ -37,7 +37,7 @@ function newItem(){
 
 }
 
-/*run newItem(); if Enter key is pressed -- NOT WORKING
+/*run newItem(); if Enter key is pressed -- NOT WORKING (inside or outside newItem function)
 
 $('#input').keydown(function(event){
   var keycode = (event.keyCode ? event.keyCode : event.which);
