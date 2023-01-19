@@ -36,3 +36,13 @@ function newItem(){
     $('#list').sortable();
 
 }
+
+/*run newItem(); if Enter key is pressed -- NOT WORKING
+
+$('#input').keydown(function(event){
+  var keycode = (event.keyCode ? event.keyCode : event.which);
+  if(keycode == '13'){
+    newItem ();
+  }
+});
+*/
